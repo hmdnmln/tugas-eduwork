@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Nilai</title>
+</head>
+<body>
+    
+
+    <script>
+       
+            let nilai = prompt("Masukkan Nilai :");
+            nilai = parseFloat(nilai);
+            let hasil;
+
+            if (nilai >= 90 && nilai <= 100) {
+                hasil = 'A';
+            } else if (nilai >= 80) {
+                hasil = 'B';
+            } else if (nilai >= 70) {
+                hasil = 'C';
+            } else if (nilai >= 60) {
+                hasil = 'D';
+            } else if (nilai >= 0) {
+                hasil = 'F';
+            } else {
+                hasil = 'Nilai tidak valid!';
+            }
+
+            alert(`Nilai Huruf: ${hasil}`);
+        
+    </script>
+</body>
+</html>
