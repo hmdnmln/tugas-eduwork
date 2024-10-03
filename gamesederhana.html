@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Tebak Angka</title>
+</head>
+<body>
+ <script>
+    alert("Selamat datang di Game Tebak Angka");
+    function startGame() {
+    let pemain1 = 0;
+    let pemain2 = 0;
+
+    for (let round = 1; round <= 5; round++) {
+        const randomNumber = Math.floor(Math.random() * 3) + 1;
+
+        let pemain1Tebakan = prompt(`Putaran ${round} - Pemain 1, masukkan angka (1-3):`);
+        pemain1Tebakan = validateInput(pemain1Tebakan);
+
+        let pemain2Tebakan = prompt(`Putaran ${round} - Pemain 2, masukkan angka (1-3):`);
+        pemain2Tebakan = validateInput(pemain2Tebakan);
+
+        if (pemain1Tebakan === randomNumber) {
+            alert(`Pemain 1 benar! Angka yang benar adalah ${randomNumber}.`);
+            pemain1++;
+        } else {
+            alert(`Pemain 1 salah! Angka yang benar adalah ${randomNumber}.`);
+        }
+
+        if (pemain2Tebakan === randomNumber) {
+            alert(`Pemain 2 benar! Angka yang benar adalah ${randomNumber}.`);
+            pemain2++;
+        } else {
+            alert(`Pemain 2 salah! Angka yang benar adalah ${randomNumber}.`);
+        }
+    }
+
+    if (pemain1 > pemain2) {
+        alert(`Pemain 1 menang dengan skor ${pemain1} - ${pemain2}!`);
+    } else if (pemain2 > pemain1) {
+        alert(`Pemain 2 menang dengan skor ${pemain2} - ${pemain1}!`);
+    } else {
+        alert(`Permainan berakhir seri dengan skor ${pemain1} - ${pemain2}!`);
+    }
+}
+
+function validateInput(input) {
+    const number = parseInt(input);
+    if (isNaN(number) || number < 1 || number > 3) {
+        alert("Harap masukkan angka antara 1 sampai 3.");
+        return validateInput(prompt("Silakan coba lagi:"));
+    }
+    return number;
+}
+startGame();
+</script>
+</body>
+</html>
