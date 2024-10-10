@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta nama="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Library</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>DATA MASYARAKAT INDRAMAYU</h1>
+        <div id="table-container"></div>
+    </div>
+    <script src="tabel.js"></script>
+    <script>
+        const data = [
+            { nama: 'Hamdan Maulana', usia: 26, alamat: 'Indramayu' },
+            { nama: 'Tria Aryanti', usia: 27, alamat: 'Indramayu' },
+        ];
+
+        const columns = ['nama', 'usia', 'alamat'];
+
+        generateTable('#table-container', data, columns);
+    </script>
+</body>
+</html>
