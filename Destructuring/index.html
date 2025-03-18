@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESTRUCTURING</title>
+</head>
+<body>
+    <script> //array
+        const listmahasiswa = ["Amir","Budi", "Dewi" , "Riko"];
+        const [satu, dua, ...dst] = listmahasiswa;
+        document.write (satu,dua, dst);
+    </script>
+    
+    <script> //object
+        const mahasiswa = {
+            nama: "Defri",
+            jeniskelamin: "Laki-laki",
+            umur: 23,
+            jurusan: "Teknik Informatika",
+        }
+            const {nama, jeniskelamin, umur} = mahasiswa;
+            document.write (nama, jeniskelamin, umur);
+    </script>
+
+    <script> //function , default value, inisial
+         const mahasiswa1 = {
+            nama: "Doni",
+            jeniskelamin: "Laki-laki",
+            umur: 23,
+            jurusan: "Teknik Informatika",
+        }
+       function printmahasiswa ({nama,jeniskelamin,umur:umr,jurusan, alamat ="Indramayu"}) {
+        document.write (nama,jeniskelamin,umr,jurusan,alamat);
+       }
+       printmahasiswa(mahasiswa1)
+    </script>
+
+</body>
+</html>
